@@ -1,0 +1,6 @@
+configparser==3.5.0
+ijson==2.3
+pyFirmata==1.0.3
+pyserial==3.3
+PyYAML==3.12
+schedule==0.4.2

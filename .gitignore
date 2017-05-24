@@ -1,0 +1,9 @@
+# virtualEnv
+dataServer
+
+# database
+*.db
+
+# Editor tmp file
+.vscode
+

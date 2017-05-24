@@ -1,0 +1,13 @@
+# Sensor settings. valid value: 'nh4', 'no3'
+sensors:
+    port1: nh4
+    port2: no3
+calibration:
+    nh3: 0
+    sth: 0
+# other:
+#     preprocessing_queue:
+#         - preprocessing.scale_and_center
+#         - preprocessing.dot_reduction
+#         - preprocessing.connect_lines
+#     use_anonymous: yes
