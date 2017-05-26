@@ -3,6 +3,7 @@
 import sys
 from pyfirmata import Arduino, util
 from calculation import calc_bta_ise_conc_from_raw
+from serial_port import get_desired_port
 
 
 class VernierBoard(object):
@@ -83,6 +84,22 @@ class VernierBoard(object):
         keys = data.keys()
         for key in keys:
             rval = data[key]
-            data[key] = calc_bta_ise_conc_from_raw(rval, self._cfg['calibration'][key])
-            print (key, "%.4f" % data[key])
+            data[key] = calc_bta_ise_conc_from_raw(
+                rval, self._cfg['calibration'][key])
+            print key, "%.4f" % data[key]
+        print ''
         return data
+
+
+def debug():
+    '''Test the functionality of the board'''
+    port = get_desired_port()
+    board = VernierBoard(port)
+    while True:
+        port_name = str(input('Which port?'))
+        board.set_mux_based_on_port(port_name)
+        print 'done'
+
+
+if __name__ == '__main__':
+    debug()
