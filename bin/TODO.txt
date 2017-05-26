@@ -1,0 +1,2 @@
+1.  Sensors may support auto-id? If that is added all the calibration can be stored to the on-chip memory of the sensors
+2.  dedicated thread for async csv writing? The time used to write csv data is short, so there is no strong requirement to do this
