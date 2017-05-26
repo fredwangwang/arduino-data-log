@@ -10,7 +10,7 @@ from serial_port import get_desired_port
 from vernier_board import VernierBoard
 from parse_cfg import get_config
 
-CFGFILENAME = '../config.yml'
+CFGFILENAME = 'config.yml'
 
 
 def schedule_data_collector(board):

@@ -1,4 +1,3 @@
 @ECHO off
 echo Start running...
-cd bin
-python server.py
+python bin/server.py
