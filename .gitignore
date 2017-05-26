@@ -1,6 +1,8 @@
-# virtualEnv
 dataServer
+python
 
 *.pyc
 *.db
+*.msi
+*.csv
 .vscode

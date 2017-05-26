@@ -18,8 +18,8 @@ def schedule_data_collector(board):
 
 
 def schedule_csv_writer(cfg):
-    #sschedule.every().day.at('00:01').do(database.write_to_csv, cfg)
-    schedule.every(2).hours.do(database.write_to_csv, cfg)
+    schedule.every().day.at('00:01').do(database.write_to_csv, cfg)
+    #schedule.every(2).hours.do(database.write_to_csv, cfg)
 
 
 def setup():

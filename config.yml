@@ -1,3 +1,6 @@
+# hash tag is a comment, any line begin with a # doesn't affect the behavior
+
+
 # Port setting. Determine which sensor is actually plugged into the port
 # Valid values: [ammonium, nitrate, none]
 ports:
@@ -5,13 +8,15 @@ ports:
     analog2: nitrate
 
 # to apply the formula "E = Eo + m(ln C)", two calibration param required
+# details see 
+# https://github.com/VernierSoftwareTechnology/arduino/blob/master/VernierBNC/VernierBNC.ino
 calibration:
     ammonium:
         Eo: 170.82
         m: 25.743
     nitrate: 
-        Eo: 482.76
-        m: -56.302
+        Eo: 170.82
+        m: 25.743
 
 # sample rate. Three levels of sample rates is allowed. Minimum interval is 1 second.
 # enter 0 to disable the level
@@ -22,4 +27,5 @@ rate:
 
 # output folder: 
 # directory: ''  # set an empty string to store csv in the same folder as the application root folder
-directory: 'C:\Users\fredw\Desktop\new_build'   # set the absolute path of the destination. NO TRAILING '\'
+# Or set the absolute path of the destination. NO TRAILING '\'
+directory: 'C:\Users\fredw\Desktop\new_build'
