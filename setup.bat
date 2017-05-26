@@ -1,5 +1,7 @@
 @ECHO off
 
+cd bin
+
 :choice
 set /P c=Are you sure you want to setup the database (THIS WILL ERASE THE ORIGINAL DB)[y/n]?
 if /I "%c%" EQU "y" goto :ifyes
@@ -16,6 +18,4 @@ goto :end
 echo Abort
 
 :end
-pause 
-exit
-
+pause

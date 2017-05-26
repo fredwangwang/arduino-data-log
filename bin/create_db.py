@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS sensors;
 CREATE TABLE sensors(
     id          INTEGER PRIMARY KEY,
     type        TEXT,
-    calibrated  BOOLEAN1 DEFAULT 0,
+    calibrated  BOOLEAN DEFAULT 0,
     last_cal    DATE
     );
 '''
@@ -15,19 +15,22 @@ ps_createSensorData = '''
 DROP TABLE IF EXISTS data;
 CREATE TABLE data(
     id          INTEGER PRIMARY KEY,
-    sensor_id   INTEGER,
+    sensor      TEXT,
     data        DOUBLE,
     time        DATETIME,
-    FOREIGN KEY (sensor_id) REFERENCES sensors(id)
+    second      INTEGER,
+    FOREIGN KEY (sensor) references sensors(type)
     );
 '''
+
 ps_defineSensors = '''
 INSERT INTO sensors(type, last_cal) VALUES(?, CURRENT_DATE)
 '''
 
 sensors = [
-    ('nh4', ),
-    ('no3', )
+    ('ammonium', ),
+    ('nitrate', ),
+    ('none', )
 ]
 
 conn.executescript(ps_createSensorInfo)

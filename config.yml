@@ -1,13 +1,25 @@
-# Sensor settings. valid value: 'nh4', 'no3'
-sensors:
-    port1: nh4
-    port2: no3
+# Port setting. Determine which sensor is actually plugged into the port
+# Valid values: [ammonium, nitrate, none]
+ports:
+    analog1: ammonium
+    analog2: nitrate
+
+# to apply the formula "E = Eo + m(ln C)", two calibration param required
 calibration:
-    nh3: 0
-    sth: 0
-# other:
-#     preprocessing_queue:
-#         - preprocessing.scale_and_center
-#         - preprocessing.dot_reduction
-#         - preprocessing.connect_lines
-#     use_anonymous: yes
+    ammonium:
+        Eo: 170.82
+        m: 25.743
+    nitrate: 
+        Eo: 482.76
+        m: -56.302
+
+# sample rate. Three levels of sample rates is allowed. Minimum interval is 1 second.
+# enter 0 to disable the level
+rate:
+    level1: 5
+    level2: 60
+    level3: 0
+
+# output folder: 
+# directory: ''  # set an empty string to store in the same folder as bin
+directory: 'C:\Users\fredw\Desktop\new_build'   # set the absolute path of the destination 

@@ -1,9 +1,6 @@
 # virtualEnv
 dataServer
 
-# database
+*.pyc
 *.db
-
-# Editor tmp file
 .vscode
-

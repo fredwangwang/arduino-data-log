@@ -8,4 +8,3 @@ echo.
 echo.
 
 call setup.bat
-pause
